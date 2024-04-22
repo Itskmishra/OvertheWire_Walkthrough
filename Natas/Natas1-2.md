@@ -10,23 +10,24 @@
 ## Solution
 We can use the password from the last challenge to log in, just as we did in the previous challenge. However, upon logging in, we are greeted with a message that says there is nothing on the page. 
 
-![Message](/home/hackerzone/Documents/cyber_sec/github_writeups/OvertheWire_Walkthrough/Natas/natasimages/natas2-message.png)
+![natas2-message](https://github.com/Itskmishra/OvertheWire_Walkthrough/assets/141756495/3d477df1-3afd-4c6e-88ed-6ee98aa293ea)
 
 We checked the source code, but there was nothing useful there either.
 
-![sourcecode](/home/hackerzone/Documents/cyber_sec/github_writeups/OvertheWire_Walkthrough/Natas/natasimages/natas2-page-source-code.png)
+![natas2-page-source-code](https://github.com/Itskmishra/OvertheWire_Walkthrough/assets/141756495/339c6841-4d6f-4163-ba1b-855febb3c4d6)
 
 However, there is an image file in the source code that we noticed. By adding "/files/pixel.png" after the URL, we can see that this is an image of a pixel, and there is nothing else on the page.
 
-![pixel-img](/home/hackerzone/Documents/cyber_sec/github_writeups/OvertheWire_Walkthrough/Natas/natasimages/natas2-pixel-img.png)
+
+![natas2-pixel-img](https://github.com/Itskmishra/OvertheWire_Walkthrough/assets/141756495/205aa2a3-3bcc-4163-b0c6-f8456df195c8)
 
 Despite this, we can still manipulate the URL. When we add or remove values from it, it is called "path traversal." We removed "pixel.png" from the URL to test it for path traversal. 
 
-![file-indexing](/home/hackerzone/Documents/cyber_sec/github_writeups/OvertheWire_Walkthrough/Natas/natasimages/natas2-file-indexing.png)
+![natas2-file-indexing](https://github.com/Itskmishra/OvertheWire_Walkthrough/assets/141756495/7aa0d81b-95d0-472d-a26f-8b0d3bbdd6d7)
 
 On visiting "URL/files," we can see that there are two files: "pixel.png" and "users.txt." We already know what "pixel.png" is, so we decided to check out "users.txt." 
 
-![users-file](/home/hackerzone/Documents/cyber_sec/github_writeups/OvertheWire_Walkthrough/Natas/natasimages/natas2-users-file.png)
+![natas2-users-file](https://github.com/Itskmishra/OvertheWire_Walkthrough/assets/141756495/2104f408-bb73-4a44-a390-7cfb492e8889)
 
 When we visited the file, we found a list of usernames and passwords for users, including the natas3 password that we needed to retrieve. 
 
